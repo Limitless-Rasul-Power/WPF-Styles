@@ -1,0 +1,191 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <!--<Window.Resources>
+        <SolidColorBrush x:Key="MainColor">LightGreen</SolidColorBrush>
+
+        <Style x:Key="BlackButton" TargetType="Button">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="FontFamily" Value="Palatino Linotype"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+        </Style>
+
+        <Style x:Key="GoldButton" TargetType="Button">
+            <Setter Property="Background" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="Gold"></Setter>
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+
+            <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="30"></Setter>
+                    <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <Style x:Key="GreatButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#373737" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="MyBorder" CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Path x:Name="PathIcon" Width="15" Height="25" Stretch="Fill" Fill="#4C87B3" HorizontalAlignment="Left" Margin="17,0,0,0" Data="F1 M 30.0833,22.1667L 50.6665,37.6043L 50.6665,38.7918L 30.0833,53.8333L 30.0833,22.1667 Z "/>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E59400" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter TargetName="PathIcon" Property="Fill" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="FontSize" Value="30"></Setter>
+                                <Setter TargetName="MyBorder" Property="BorderThickness" Value="10"></Setter>
+                                <Setter TargetName="MyBorder"  Property="BorderBrush" Value="Green"></Setter>
+                            </Trigger>
+                            
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="OrangeRed" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+   </Window.Resources>-->
+    
+    
+    <Grid>
+
+        <!--<StackPanel Width="500">
+            <Button Height="50" Style="{DynamicResource GreatButton}">Content</Button>
+            <Button Height="50" Style="{StaticResource BlackButton}">Content</Button>
+            <Button Height="50" Style="{StaticResource GoldButton}">Content</Button>
+            <Button Height="50" Style="{DynamicResource BlackButton}">Content</Button>
+        </StackPanel>-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="{StaticResource HeaderLeftColumColor}"></Grid>
+            <Grid Grid.Column="1" Background="{StaticResource HeaderLeftColumColor}">
+                <WrapPanel>
+                    
+                <Image Source="/img/movie.png"></Image>
+                    <TextBlock FontSize="18" VerticalAlignment="Center" Foreground="#f7ede2" FontFamily="Segoe UI">Enjoy movie</TextBlock>
+                    
+                </WrapPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="95*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Background="{StaticResource HeaderLeftColumColor}">
+                    
+                </Grid>
+
+                <Grid Grid.Column="1" Background="{StaticResource HeaderRigthColumnColor}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="90*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Image x:Name="ImgSearch" Source="/img/search.png" Margin="5"></Image>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+
+                        <TextBox x:Name="TxtBxMovieName" Style="{StaticResource StyleTxtBx}" KeyUp="TxtBxMovieName_KeyUp"></TextBox>
+
+                    </Grid>
+                    
+                </Grid>
+                
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="45*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="85*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+
+                <Image x:Name="ImgMovie" Grid.Row="0"></Image>
+
+                <TextBlock x:Name="TxtBlckGenre" Grid.Row="1" Style="{StaticResource StyleTxtBlck}"></TextBlock>
+                
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="65*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Name="TxtBlckTitle" Grid.Row="0" Style="{StaticResource StyleTxtBlck}"></TextBlock>
+
+                <Grid Grid.Row="1">
+                    <ScrollViewer>
+                        <TextBox x:Name="TxtBxWrap" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center" BorderThickness="0"></TextBox>
+                    </ScrollViewer>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Button Style="{StaticResource GreatButton}">Watch Now</Button>
+                </Grid>
+                
+            </Grid>
+            
+        </Grid>
+        
+    </Grid>
+</Window>
